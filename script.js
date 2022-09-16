@@ -19,6 +19,12 @@ function checkInputs(){
 
     if(usernameValue === '') {
        setErrorfor(username, "O nome do usuário é obrigatório");
+    } else{
+        setSuccessFor(username);
+    }
+
+    if(emailValue === '') {
+        setErrorfor(email, 'O email é obrigatório')
     }
 }
 
