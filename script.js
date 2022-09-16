@@ -6,7 +6,10 @@ const passwordConfirmation = document.getElementById('password-confirmation');
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
+
+    checkInputs();
 });
+
 
 function checkInputs(){
     const usernameValue = username.value;
@@ -19,7 +22,13 @@ function checkInputs(){
     }
 }
 
-function setErrorfor(input, message) {}
+function setErrorfor(input, message) {
+   const formControl = input.parentElement;
+   const small = formControl.querySelector('small')
+    small.innerText = message;
+
+    formControl.className = 'form-control error';
+}
 
 function setSuccessFor(input, message) {
     const formControl = input.parentElement;
