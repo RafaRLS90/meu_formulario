@@ -25,6 +25,16 @@ function checkInputs(){
 
     if(emailValue === '') {
         setErrorfor(email, 'O email é obrigatório')
+    } else if (checkEmail(emailValue)) {
+            setErrorfor(email, 'Por favor, insira um email válido.');
+    } else {
+        setSuccessFor(email)
+    }
+
+    if (passwordValue === '') {
+        setErrorfor(password, "A senha é obrigatória. ");
+    } else if (passwordValue.lenght < 7) {
+        setErrorfor(passwor, "A senha precisa ter 7 caracteres...")
     }
 }
 
@@ -41,4 +51,9 @@ function setSuccessFor(input, message) {
 
     //Adicionar classe de sucesso
     formControl.className = 'form-control success';
+}
+function checkEmail(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+    );
 }
