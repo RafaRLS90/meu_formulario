@@ -50,7 +50,7 @@ function checkInputs(){
      const formControl = form.querySelectorAll(".form-control");
 
     const formIsValid = { ... formControl}.every((formControl) => {
-        return (formControl.className === 'form-control success');
+        return (formControl.className === "form-control success");
     }); 
 
     if (formIsValid) {
